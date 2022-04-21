@@ -111,6 +111,7 @@ public class DialogueReader : MonoBehaviour
 
     void CloseDialogue()
     {
+        textAnimator.onTextShowed.RemoveAllListeners();
         TransitionBlock[] tb = FindObjectsOfType<TransitionBlock>(true);
         foreach (TransitionBlock b in tb)
         {

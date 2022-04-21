@@ -36,7 +36,7 @@ public class ValueHandler : MonoBehaviour
         }
         else
         {
-            Destroy(this);
+            Destroy(this.gameObject);
         }
     }
 

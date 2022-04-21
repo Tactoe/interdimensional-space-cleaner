@@ -13,24 +13,23 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-
         if (Instance == null)
         {
-
             Instance = this;
-            DontDestroyOnLoad(this.gameObject);
+            DontDestroyOnLoad(gameObject);
 
             //Rest of your Awake code
 
         }
         else
         {
-            Destroy(this);
+            Destroy(this.gameObject);
         }
     }
 
     private void Start()
     {
+        SceneManager.sceneLoaded += OnLevelFinishedLoading;
         pauseMenu.SetActive(false);
     }
 
@@ -47,7 +46,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void OnLevelWasLoaded(int level)
+    private void OnLevelFinishedLoading(Scene scene, LoadSceneMode loadMode)
     {
         if (SceneManager.GetActiveScene().buildIndex < 2)
             murderMode = false;

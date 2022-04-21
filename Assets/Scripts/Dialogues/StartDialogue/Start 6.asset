@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Start 6
   m_EditorClassIdentifier: 
   speakerName: Maro
-  text: Oh my! We're dealing with a celebrity today, I better be on my way real soon!
+  text: '{rot}Oh my!{/rot} We''re dealing with a celebrity today, I better be on
+    my way real soon!'
   img: {fileID: 0}
   leftSpeaker: {fileID: 21300000, guid: 93ce57330fc98ba48af29a81135b53f3, type: 3}
   rightSpeaker: {fileID: 0}
