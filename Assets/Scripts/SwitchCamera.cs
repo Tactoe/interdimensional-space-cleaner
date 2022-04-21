@@ -8,10 +8,37 @@ public class SwitchCamera : MonoBehaviour
     public float animDuration;
     public Ease animeEase;
     int rotation = 0;
+    int index = 0;
+    [SerializeField]
+    Transform spotAnchor;
+    List<Transform> spots;
     // Start is called before the first frame update
     void Start()
     {
-        
+        spots = new List<Transform>();
+        foreach (Transform cam in spotAnchor)
+        {
+            spots.Add(cam);   
+        }
+        SwitchCam();
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            SwitchCam();
+        }        
+    }
+
+    public void SwitchCam()
+    {
+        transform.DOMove(spots[index].position, animDuration);
+        transform.DORotate(spots[index].rotation.eulerAngles, animDuration);
+        index++;
+        if (index >= spots.Count)
+            index = 0;
+
     }
 
     public void RotateCam()
@@ -22,9 +49,4 @@ public class SwitchCamera : MonoBehaviour
             rotation = 0;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
