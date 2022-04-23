@@ -1,10 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using DG.Tweening;
 using Febucci.UI;
+using System;
+
+[Serializable]
+public class SpeakerAction {
+    public bool MoveX;
+    public float MoveValue;
+    public bool Flip;
+}
 
 public class DialogueReader : MonoBehaviour
 {
@@ -13,11 +19,15 @@ public class DialogueReader : MonoBehaviour
     [SerializeField]
     Image leftCharacter, rightCharacter, bgImg;
     [SerializeField]
-    TextMeshProUGUI nameText, dialogueText;
+    TextMeshProUGUI nameText, dialogueText, narratorDialogueText;
     [SerializeField]
     CanvasGroup cg;
     [SerializeField]
-    TextAnimatorPlayer textAnimator;
+    TextAnimatorPlayer textAnimator, narratorTextAnimator;
+    [SerializeField]
+    GameObject DialogueBox;
+    [SerializeField]
+    GameObject NarratorDialogueBox;
     int dialogueIndex;
     bool textFinishedShowing;
     public bool inDialogue;
@@ -31,6 +41,7 @@ public class DialogueReader : MonoBehaviour
     {
         inDialogue = true;
         textAnimator.onTextShowed.AddListener(delegate{textFinishedShowing = true;});
+        narratorTextAnimator.onTextShowed.AddListener(delegate{textFinishedShowing = true;});
     }
 
     // Update is called once per frame
@@ -69,36 +80,52 @@ public class DialogueReader : MonoBehaviour
     {
         if (node.text != "")
         {
-            dialogueText.transform.parent.gameObject.SetActive(true);
+            DialogueBox.SetActive(true);
+        }
+        else
+        {
+            DialogueBox.SetActive(false);
+            NarratorDialogueBox.SetActive(false);
+        }
+
+        if (node.speakerName != "")
+        {
+            NarratorDialogueBox.SetActive(false);
+            DialogueBox.SetActive(true);
+            nameText.text = node.speakerName;
+            if (node.speakerName == "Maro")
+            {
+                nameText.transform.parent.GetComponent<Image>().color = new Color(22, 0, 27);
+                leftCharacter.color = new Color(1, 1, 1);
+                rightCharacter.color =  new Color(0.5f, 0.5f, 0.5f);
+            }
+            else if (node.speakerName == "Cubotron")
+            {
+                nameText.transform.parent.GetComponent<Image>().color = new Color(252, 228, 182);
+                rightCharacter.color = new Color(1, 1, 1);
+                leftCharacter.color = new Color(0.5f, 0.5f, 0.5f);
+            }
             dialogueText.text = node.text;
         }
         else
         {
-            dialogueText.transform.parent.gameObject.SetActive(false);
+            DialogueBox.SetActive(false);
+            NarratorDialogueBox.SetActive(true);
+            narratorDialogueText.text = node.text;
+            rightCharacter.color = new Color(0.5f, 0.5f, 0.5f);
+            leftCharacter.color = new Color(0.5f, 0.5f, 0.5f);
         }
-        if (node.speakerName != "")
-        {
-            Color color;
-            nameText.transform.parent.gameObject.SetActive(true);
-            nameText.text = node.speakerName;
-            if (node.speakerName == "Maro")
-                nameText.transform.parent.GetComponent<Image>().color = new Color(22, 0, 27);
-            if (node.speakerName == "Cubotron")
-                nameText.transform.parent.GetComponent<Image>().color = new Color(252, 228, 182);
-        }
-        else
-            nameText.transform.parent.gameObject.SetActive(false);
         if (node.img != null)
         {
             textFinishedShowing = true;
         }
         HandleImg(node.img, bgImg);
-        HandleImg(node.leftSpeaker, leftCharacter);
-        HandleImg(node.rightSpeaker, rightCharacter);
+        HandleImg(node.leftSpeaker, leftCharacter, node.speakerActions[0]);
+        HandleImg(node.rightSpeaker, rightCharacter, node.speakerActions[1]);
         dialogueIndex++;
     }
 
-    void HandleImg(Sprite img, Image target)
+    void HandleImg(Sprite img, Image target, SpeakerAction action = null)
     {
         if (img != null)
         {
@@ -107,6 +134,20 @@ public class DialogueReader : MonoBehaviour
         }
         else
             target.gameObject.SetActive(false);
+        if (action != null)
+        {
+            if (action.Flip)
+            {
+                if (Mathf.Abs(target.transform.rotation.eulerAngles.y) < 90)
+                    target.transform.DOLocalRotate(Vector3.up * 180, 0.5f);
+                else
+                    target.transform.DOLocalRotate(Vector3.zero, 0.5f);
+            }
+            if (action.MoveX)
+            {
+                target.transform.DOLocalMoveX(target.transform.position.x + action.MoveValue, 0.5f);
+            }
+        }
     }
 
     void CloseDialogue()
