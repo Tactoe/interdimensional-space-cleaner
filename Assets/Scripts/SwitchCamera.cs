@@ -34,7 +34,7 @@ public class SwitchCamera : MonoBehaviour
     public void SwitchCam()
     {
         transform.DOMove(spots[index].position, animDuration);
-        transform.DORotate(spots[index].rotation.eulerAngles, animDuration);
+        transform.DORotate(spots[index].rotation.eulerAngles, animDuration, RotateMode.FastBeyond360);
         index++;
         if (index >= spots.Count)
             index = 0;

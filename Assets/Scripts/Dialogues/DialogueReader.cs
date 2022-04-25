@@ -28,17 +28,25 @@ public class DialogueReader : MonoBehaviour
     GameObject DialogueBox;
     [SerializeField]
     GameObject NarratorDialogueBox;
+    [SerializeField]
+    Dialogue DialogueToPlayOnStart;
     int dialogueIndex;
     bool textFinishedShowing;
     public bool inDialogue;
     // Start is called before the first frame update
     void Start()
     {
+        if (DialogueToPlayOnStart != null)
+            StartDialogue(DialogueToPlayOnStart);
         //cg.alpha = 0;
     }
 
     public void ActivateDialogue()
     {
+        foreach (Transform child in transform)
+        {
+            child.gameObject.SetActive(true);
+        }
         inDialogue = true;
         textAnimator.onTextShowed.AddListener(delegate{textFinishedShowing = true;});
         narratorTextAnimator.onTextShowed.AddListener(delegate{textFinishedShowing = true;});
@@ -52,6 +60,7 @@ public class DialogueReader : MonoBehaviour
             if (!textFinishedShowing)
             {
                 textAnimator.SkipTypewriter();
+                narratorTextAnimator.SkipTypewriter();
                 textFinishedShowing = true;
             }
             else
@@ -71,6 +80,7 @@ public class DialogueReader : MonoBehaviour
 
     public void StartDialogue(Dialogue newDial)
     {
+        ActivateDialogue();
         currentDialogue = newDial;
         ReadNewNode(currentDialogue.dialogue[dialogueIndex]);
         cg.alpha = 1;
@@ -147,12 +157,21 @@ public class DialogueReader : MonoBehaviour
             {
                 target.transform.DOLocalMoveX(target.transform.position.x + action.MoveValue, 0.5f);
             }
+            // if (action.Move)
+            // {
+            //     target.transform.DOMoveY(target.transform.position.y - 10, 19);
+            // }
         }
     }
 
     void CloseDialogue()
     {
         textAnimator.onTextShowed.RemoveAllListeners();
+        narratorTextAnimator.onTextShowed.RemoveAllListeners();
+        foreach (Transform child in transform)
+        {
+            child.gameObject.SetActive(false);
+        }
         TransitionBlock[] tb = FindObjectsOfType<TransitionBlock>(true);
         foreach (TransitionBlock b in tb)
         {

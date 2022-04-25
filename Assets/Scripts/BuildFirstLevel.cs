@@ -26,7 +26,9 @@ public class BuildFirstLevel : MonoBehaviour
         int i = 0;
         foreach (Transform child in transform)
         {
-            child.DOScale(originalScale[i], 1).SetEase(Ease.InElastic);
+            child.DOScale(originalScale[i], 1).SetEase(Ease.InElastic).OnComplete(delegate {
+                print("wo");
+            });
             yield return new WaitForSeconds(0.01f);
             i++;
         }

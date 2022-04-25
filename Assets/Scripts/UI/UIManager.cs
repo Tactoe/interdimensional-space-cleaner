@@ -12,8 +12,6 @@ public class UIManager : MonoBehaviour
     ShowcaseItem showcase;
     [SerializeField]
     GameObject showcaseCamera;
-    [SerializeField]
-    GameObject rateButton;
     GameObject rtGO;
     GameObject lastObjectChecked;
     public GameObject[] glist;
@@ -41,7 +39,7 @@ public class UIManager : MonoBehaviour
         inMenu = true;
         showcaseCamera.SetActive(true);
         examineItemCanvas.SetActive(true);
-        rateButton.SetActive(false);
+        //rateButton.SetActive(false);
         lastObjectChecked = toShowcase;
         if (!GameManager.Instance.murderMode && data.rambling != null && data.rambling.Length > 0)
         {
@@ -54,8 +52,8 @@ public class UIManager : MonoBehaviour
         if (tp != null)
             tp.canTeleport = true;
 
-        if (!GameManager.Instance.murderMode)
-            ValueHandler.Instance.PreviewValue(data.values);
+        //if (!GameManager.Instance.murderMode)
+        //    ValueHandler.Instance.PreviewValue(data.values);
         showcase.SetNewShowcase(toShowcase, data);
     }
 
@@ -64,7 +62,6 @@ public class UIManager : MonoBehaviour
         inMenu = false;
         showcaseCamera.SetActive(false);
         examineItemCanvas.SetActive(false);
-        rateButton.SetActive(true);
         rtGO.SetActive(false);
         if (!GameManager.Instance.murderMode)
         {

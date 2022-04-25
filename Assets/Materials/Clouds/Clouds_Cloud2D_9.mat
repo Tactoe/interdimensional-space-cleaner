@@ -6,7 +6,7 @@ Texture2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: z__MainGradientTextureTex{"mode":0,"colorKeys":[{"color":{"r":0.12156863510608673,"g":0.007843137718737126,"b":0.22352942824363709,"a":1.0},"time":0.12353704124689102},{"color":{"r":0.6784442663192749,"g":0.3784709870815277,"b":0.7641509771347046,"a":1.0},"time":0.6029449701309204},{"color":{"r":0.9438775777816773,"g":0.75,"b":1.0,"a":1.0},"time":0.7117723226547241},{"color":{"r":0.5843137502670288,"g":0.35686275362968447,"b":0.6470588445663452,"a":1.0},"time":0.7970550060272217}],"alphaKeys":[{"alpha":1.0,"time":0.5000076293945313},{"alpha":1.0,"time":1.0}]}
+  m_Name: z__MainGradientTextureTex{"mode":0,"colorKeys":[{"color":{"r":0.5660377740859985,"g":0.15752938389778138,"b":0.4728621542453766,"a":1.0},"time":0.0},{"color":{"r":0.7766703963279724,"g":0.2594339847564697,"b":1.0,"a":1.0},"time":0.5411764979362488},{"color":{"r":0.5660377740859985,"g":0.15752938389778138,"b":0.4728621542453766,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":1.0,"time":0.5000076293945313},{"alpha":1.0,"time":1.0}]}
   m_ImageContentsHash:
     serializedVersion: 2
     Hash: 00000000000000000000000000000000
@@ -41,7 +41,7 @@ Texture2D:
   m_ColorSpace: 1
   m_PlatformBlob: 
   image data: 1024
-  _typelessdata: ff1f0239ff1f0239ff1f0239ff1f0239ff1f0239ff1f0239ff1f0239ff1f0239ff1f0239ff1f0239ff1f0239ff1f0239ff1f0239ff1f0239ff1f0239ff1f0239ff1f0239ff1f0239ff1f0239ff1f0239ff1f0239ff1f0239ff1f0239ff1f0239ff1f0239ff1f0239ff1f0239ff1f0239ff1f0239ff1f0239ff1f0239ff1f0239ff20023aff21033bff22043cff23053dff24053eff25063fff270740ff280841ff290943ff2a0944ff2b0a45ff2c0b46ff2e0c47ff2f0c48ff300d49ff310e4aff320f4cff33104dff34104eff36114fff371250ff381351ff391352ff3a1453ff3b1555ff3d1656ff3e1657ff3f1758ff401859ff41195aff421a5bff441a5dff451b5eff461c5fff471d60ff481d61ff491e62ff4b1f63ff4c2064ff4d2166ff4e2167ff4f2268ff502369ff52246aff53246bff54256cff55266dff56276fff572770ff582871ff5a2972ff5b2a73ff5c2b74ff5d2b75ff5e2c76ff5f2d78ff612e79ff622e7aff632f7bff64307cff65317dff66327eff68327fff693381ff6a3482ff6b3583ff6c3584ff6d3685ff6f3786ff703887ff713988ff72398aff733a8bff743b8cff763c8dff773c8eff783d8fff793e90ff7a3f92ff7b3f93ff7d4094ff7e4195ff7f4296ff804397ff814398ff824499ff83459bff85469cff86469dff87479eff88489fff8949a0ff8a4aa1ff8c4aa2ff8d4ba4ff8e4ca5ff8f4da6ff904da7ff914ea8ff934fa9ff9450aaff9550abff9651adff9752aeff9853afff9a54b0ff9b54b1ff9c55b2ff9d56b3ff9e57b4ff9f57b6ffa158b7ffa259b8ffa35ab9ffa45bbaffa55bbbffa65cbcffa75dbeffa95ebfffaa5ec0ffab5fc1ffac60c2ffae61c3ffb065c6ffb268c8ffb56ccaffb76fccffba72ceffbc76d0ffbf79d3ffc17dd5ffc480d7ffc683d9ffc887dbffcb8addffcd8ee0ffd091e2ffd295e4ffd598e6ffd79be8ffda9feaffdca2edffdea6efffe1a9f1ffe3acf3ffe6b0f5ffe8b3f7ffebb7faffedbafcffefbefeffefbdfdffeab8f9ffe6b4f5ffe2aff1ffdeabecffdaa6e8ffd5a1e4ffd19de0ffcd98dcffc993d8ffc48fd4ffc08acfffbc86cbffb881c7ffb47cc3ffaf78bfffab73bbffa76fb7ffa36ab2ff9e65aeff9a61aaff965ca6ff955ba5ff955ba5ff955ba5ff955ba5ff955ba5ff955ba5ff955ba5ff955ba5ff955ba5ff955ba5ff955ba5ff955ba5ff955ba5ff955ba5ff955ba5ff955ba5ff955ba5ff955ba5ff955ba5ff955ba5ff955ba5ff955ba5ff955ba5ff955ba5ff955ba5ff955ba5ff955ba5ff955ba5ff955ba5ff955ba5ff955ba5ff955ba5ff955ba5ff955ba5ff955ba5ff955ba5ff955ba5ff955ba5ff955ba5ff955ba5ff955ba5ff955ba5ff955ba5ff955ba5ff955ba5ff955ba5ff955ba5ff955ba5ff955ba5ff955ba5ff955ba5ff955ba5
+  _typelessdata: ff902879ff91287aff91297bff92297cff92297cff92297dff93297eff93297fff932a80ff942a81ff942a82ff952a83ff952a84ff952b85ff962b86ff962b87ff972b88ff972b89ff972c8aff982c8bff982c8cff992c8dff992c8eff992d8fff9a2d90ff9a2d91ff9a2d92ff9b2d93ff9b2d94ff9c2e95ff9c2e96ff9c2e97ff9d2e98ff9d2e99ff9e2f9aff9e2f9bff9e2f9cff9f2f9dff9f2f9effa0309fffa030a0ffa030a1ffa130a1ffa130a2ffa130a3ffa231a4ffa231a5ffa331a6ffa331a7ffa331a8ffa432a9ffa432aaffa532abffa532acffa532adffa633aeffa633afffa733b0ffa733b1ffa733b2ffa833b3ffa834b4ffa834b5ffa934b6ffa934b7ffaa34b8ffaa35b9ffaa35baffab35bbffab35bcffac35bdffac36beffac36bfffad36c0ffad36c1ffae36c2ffae36c3ffae37c4ffaf37c5ffaf37c6ffaf37c7ffb037c7ffb038c8ffb138c9ffb138caffb138cbffb238ccffb239cdffb339ceffb339cfffb339d0ffb439d1ffb439d2ffb53ad3ffb53ad4ffb53ad5ffb63ad6ffb63ad7ffb63bd8ffb73bd9ffb73bdaffb83bdbffb83bdcffb83cddffb93cdeffb93cdfffba3ce0ffba3ce1ffba3de2ffbb3de3ffbb3de4ffbc3de5ffbc3de6ffbc3de7ffbd3ee8ffbd3ee9ffbd3eeaffbe3eebffbe3eecffbf3fecffbf3fedffbf3feeffc03fefffc03ff0ffc140f1ffc140f2ffc140f3ffc240f4ffc240f5ffc340f6ffc341f7ffc341f8ffc441f9ffc441faffc441fbffc542fcffc542fdffc642feffc642ffffc642feffc542fdffc541fcffc441faffc441f9ffc341f8ffc341f7ffc240f6ffc240f5ffc140f4ffc140f2ffc13ff1ffc03ff0ffc03fefffbf3feeffbf3fedffbe3eebffbe3eeaffbd3ee9ffbd3ee8ffbc3de7ffbc3de6ffbb3de5ffbb3de3ffbb3de2ffba3ce1ffba3ce0ffb93cdfffb93cdeffb83bddffb83bdbffb73bdaffb73bd9ffb63bd8ffb63ad7ffb63ad6ffb53ad4ffb53ad3ffb439d2ffb439d1ffb339d0ffb339cfffb239ceffb238ccffb138cbffb138caffb038c9ffb037c8ffb037c7ffaf37c6ffaf37c4ffae37c3ffae36c2ffad36c1ffad36c0ffac36bfffac35beffab35bcffab35bbffab35baffaa35b9ffaa34b8ffa934b7ffa934b5ffa834b4ffa833b3ffa733b2ffa733b1ffa633b0ffa633afffa532adffa532acffa532abffa432aaffa431a9ffa331a8ffa331a7ffa231a5ffa231a4ffa130a3ffa130a2ffa030a1ffa030a0ff9f2f9eff9f2f9dff9f2f9cff9e2f9bff9e2f9aff9d2e99ff9d2e98ff9c2e96ff9c2e95ff9b2e94ff9b2d93ff9a2d92ff9a2d91ff9a2d90ff992c8eff992c8dff982c8cff982c8bff972c8aff972b89ff962b88ff962b86ff952b85ff952a84ff942a83ff942a82ff942a81ff932a7fff93297eff92297dff92297cff91297bff91287aff902879
   m_StreamData:
     serializedVersion: 2
     offset: 0
@@ -162,12 +162,12 @@ Material:
     - _Metallic: 0
     - _ObjectPositionImpact: 1
     - _OcclusionStrength: 1
-    - _Opacity: 1
+    - _Opacity: 0.833
     - _Parallax: 0.005
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _ShadowAmount: 0.021
-    - _ShadowDistortion: 0.3
+    - _ShadowAmount: 0.438
+    - _ShadowDistortion: 0.61
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -178,12 +178,12 @@ Material:
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EdgeHighlightColor: {r: 0.3584906, g: 0.3584906, b: 0.3584906, a: 1}
+    - _EdgeHighlightColor: {r: 0.3291075, g: 0.053266272, b: 0.5943396, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _OffsetSpeed: {r: -0.05, g: 0, b: 0, a: 0}
     - _RandomOffset: {r: 0, g: 0, b: 0, a: 0}
     - _ShadowCenter: {r: 1, g: 0.15, b: 0, a: 0}
-    - _ShadowColor: {r: 0.3999644, g: 0.573121, b: 0.7924528, a: 1}
+    - _ShadowColor: {r: 0.850673, g: 0, b: 0.990566, a: 1}
     - _ShadowRange: {r: 0.3, g: 0.85, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
