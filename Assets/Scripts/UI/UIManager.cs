@@ -53,7 +53,7 @@ public class UIManager : MonoBehaviour
             tp.canTeleport = true;
 
         //if (!GameManager.Instance.murderMode)
-        //    ValueHandler.Instance.PreviewValue(data.values);
+        ValueHandler.Instance.PreviewValue(data.values);
         showcase.SetNewShowcase(toShowcase, data);
     }
 

@@ -8,19 +8,15 @@ public class SwitchCamera : MonoBehaviour
     public float animDuration;
     public Ease animeEase;
     int rotation = 0;
-    int index = 0;
+    int spotIndex = 0;
     [SerializeField]
-    Transform spotAnchor;
+    Transform[] spotAnchors;
+    int spotAnchorIndex = 0;
     List<Transform> spots;
     // Start is called before the first frame update
     void Start()
     {
-        spots = new List<Transform>();
-        foreach (Transform cam in spotAnchor)
-        {
-            spots.Add(cam);   
-        }
-        SwitchCam();
+        BuildSpotList();
     }
 
     void Update()
@@ -31,13 +27,30 @@ public class SwitchCamera : MonoBehaviour
         }        
     }
 
+    public void IncreaseAnchor()
+    {
+        spotIndex = 0;
+        spotAnchorIndex++;
+        BuildSpotList();
+    }
+
+    void BuildSpotList()
+    {
+        spots = new List<Transform>();
+        foreach (Transform cam in spotAnchors[spotAnchorIndex])
+        {
+            spots.Add(cam);   
+        }
+        SwitchCam();
+    }
+
     public void SwitchCam()
     {
-        transform.DOMove(spots[index].position, animDuration);
-        transform.DORotate(spots[index].rotation.eulerAngles, animDuration, RotateMode.FastBeyond360);
-        index++;
-        if (index >= spots.Count)
-            index = 0;
+        transform.DOMove(spots[spotIndex].position, animDuration);
+        transform.DORotate(spots[spotIndex].rotation.eulerAngles, animDuration, RotateMode.FastBeyond360);
+        spotIndex++;
+        if (spotIndex >= spots.Count)
+            spotIndex = 0;
 
     }
 

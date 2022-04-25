@@ -74,6 +74,7 @@ public class PointGiver : MonoBehaviour
             num[i] = 0;
         num[targetIndex] = isNegative ? -1 : 1;
         ValueHandler.Instance.UpdateValues(num);
+        transform.DOKill();
         Destroy(gameObject);
     }
 }

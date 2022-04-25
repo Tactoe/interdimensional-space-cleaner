@@ -11,6 +11,7 @@ public class ItemData : MonoBehaviour
     [TextArea(5, 10)]
     public string[] rambling;
     public GameObject deathParticles;
+    public int itemExp;
     
     public float sizeModifier = 0;
     // Start is called before the first frame update
@@ -27,6 +28,7 @@ public class ItemData : MonoBehaviour
 
     public void DitchObject()
     {
+        FindObjectOfType<EraserLevel>().IncreaseExp(itemExp);
         SpawnItemOnDeath deathSpawner = gameObject.GetComponent<SpawnItemOnDeath>();
         if (deathSpawner != null)
             deathSpawner.SpawnItems();

@@ -29,14 +29,9 @@ public class ValueHandler : MonoBehaviour
         {
 
             Instance = this;
-            DontDestroyOnLoad(this.gameObject);
 
             //Rest of your Awake code
 
-        }
-        else
-        {
-            Destroy(this.gameObject);
         }
     }
 

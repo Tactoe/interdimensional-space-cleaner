@@ -37,12 +37,12 @@ public class Particulator : MonoBehaviour
             int numParticlesAlive = ps.GetParticles(particles);
             for (int i = 0; i < numParticlesAlive; i++)
             {
-                if (particles[i].remainingLifetime < 0.05f)
+                if (particles[i].remainingLifetime <= 0.15f)
                 {
                     EmitUIBit(particles[i].position);
                 }
             }
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.1475f);
 
         }
 
@@ -50,7 +50,8 @@ public class Particulator : MonoBehaviour
 
     void EmitUIBit(Vector3 pos)
     {
-        Vector2 uiPos = Camera.main.WorldToScreenPoint(pos);
+        Camera mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        Vector2 uiPos = mainCam.WorldToScreenPoint(pos);
         GameObject tmp = Instantiate(toInstantiate, canvas.transform);
 
         tmp.transform.position = uiPos;

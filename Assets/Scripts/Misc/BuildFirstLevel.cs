@@ -27,11 +27,13 @@ public class BuildFirstLevel : MonoBehaviour
         foreach (Transform child in transform)
         {
             child.DOScale(originalScale[i], 1).SetEase(Ease.InElastic).OnComplete(delegate {
-                print("wo");
+
+                //print("wo");
             });
-            yield return new WaitForSeconds(0.01f);
+            //yield return new WaitForSeconds(0.01f);
             i++;
         }
+            yield return new WaitForSeconds(0.01f);
     }
 
     // Update is called once per frame

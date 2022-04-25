@@ -81,6 +81,7 @@ public class DialogueReader : MonoBehaviour
     public void StartDialogue(Dialogue newDial)
     {
         ActivateDialogue();
+        dialogueIndex = 0;
         currentDialogue = newDial;
         ReadNewNode(currentDialogue.dialogue[dialogueIndex]);
         cg.alpha = 1;

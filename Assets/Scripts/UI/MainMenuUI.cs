@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,15 +12,11 @@ public class MainMenuUI : MonoBehaviour
     [SerializeField]
     Animator cameraAnim;
     [SerializeField]
-    Animator objectiveAnim;
-    Animator canvasAnim;
-    [SerializeField]
     CanvasGroup cg;
 
     void Start()
     {
         cg = GetComponent<CanvasGroup>();
-        canvasAnim = GetComponent<Animator>();
         //transform.localScale = 
         cg.alpha = 0;
         
@@ -43,8 +39,6 @@ public class MainMenuUI : MonoBehaviour
     {
         cg.interactable = false;
         cg.blocksRaycasts = false;
-        canvasAnim.SetTrigger("startGame");
-        objectiveAnim.SetTrigger("startGame");
         cameraAnim.SetTrigger("startGame");
     }
 }
