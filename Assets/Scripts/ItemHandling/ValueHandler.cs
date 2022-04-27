@@ -11,9 +11,9 @@ public class ValueHandler : MonoBehaviour
     public static ValueHandler Instance;
     public float scaleUpValue = 1.2f;
     public float scaleUpTime = 0.1f;
-    public float[] values;
-    public float[] idealValues;
-    public Color[] jaugeColors;
+    public List<float> values;
+    public List<float> idealValues;
+    public List<Color> jaugeColors;
     List<Image> positivePreview;
     List<Image> negativePreview;
     List<Image> negativePreviewCover;
@@ -50,7 +50,7 @@ public class ValueHandler : MonoBehaviour
 
     void SetupLevel()
     {
-        for (int i = 0; i < values.Length; i++)
+        for (int i = 0; i < values.Count; i++)
         {
             GameObject tmp = Instantiate(meterPrefab, transform);
             tmp.name = "Meter " + i;
@@ -72,7 +72,7 @@ public class ValueHandler : MonoBehaviour
 
     public void UpdateValues(float[] newValues)
     {
-        for (int i = 0; i < values.Length; i++)
+        for (int i = 0; i < values.Count; i++)
         {
             if (newValues[i] != 0)
             {
@@ -94,10 +94,46 @@ public class ValueHandler : MonoBehaviour
         }
         SetValues();
     }
+    
+    public void AddJauge(Color newColor, float newBaseValue, float newIdealValue)
+    {
+        int i = jauges.Count;
+        values.Add(newBaseValue);
+        idealValues.Add(newIdealValue);
+        GameObject tmp = Instantiate(meterPrefab, transform);
+        tmp.name = "Meter " + i;
+        jauges.Add(tmp.transform.Find("Jauge").GetComponent<Image>());
+        positivePreview.Add(tmp.transform.Find("Positive").GetComponent<Image>());
+        jauges[i].color = newColor;
+        jaugeColors.Add(newColor);
+        jauges[i].gameObject.name = "Jauge " + i;
+
+        Transform negativeHolder = tmp.transform.Find("NegativeBar");
+        negativePreview.Add(negativeHolder.Find("Negative").GetComponent<Image>());
+        negativePreviewCover.Add(negativeHolder.Find("Cover").GetComponent<Image>());
+        negativePreviewCover[i].color = jaugeColors[i];
+
+        goalIndicators.Add(tmp.transform.Find("Indicator").GetComponent<Image>());
+        goalIndicators[i].rectTransform.rotation = Quaternion.Euler(0, 0, -90 - (idealValues[i] / 100) * 360);
+        SetValues();
+    }
+
+    public void ChangeJauge(int jaugeToChangeIndex, Color newColor, float newBaseValue, float newIdealValue)
+    {
+        jauges[jaugeToChangeIndex].color = newColor;
+        jaugeColors[jaugeToChangeIndex] = newColor;
+        values[jaugeToChangeIndex] = newBaseValue;
+        idealValues[jaugeToChangeIndex] = newIdealValue;
+        positivePreview[jaugeToChangeIndex].fillAmount = newBaseValue / 100;
+        negativePreviewCover[jaugeToChangeIndex].fillAmount = newBaseValue / 100;
+        negativePreview[jaugeToChangeIndex].fillAmount = newBaseValue / 100;
+        goalIndicators[jaugeToChangeIndex].rectTransform.rotation = Quaternion.Euler(0, 0, -90 - (idealValues[jaugeToChangeIndex] / 100) * 360);
+        SetValues();
+    }
 
     void SetValues()
     {
-        for (int i = 0; i < values.Length; i++)
+        for (int i = 0; i < values.Count; i++)
         {
             jauges[i].fillAmount = values[i] / 100;
         }
@@ -106,7 +142,7 @@ public class ValueHandler : MonoBehaviour
     public void PreviewValue(float[] newValues)
     {
         //TogglePreview(true);
-        for (int i = 0; i < values.Length; i++)
+        for (int i = 0; i < newValues.Length; i++)
         {
             if (newValues[i] > 0)
             {
@@ -136,11 +172,11 @@ public class ValueHandler : MonoBehaviour
     public int EvaluateIsland()
     {
         float surplus = 0;
-        for (int i = 0; i < values.Length; i++)
+        for (int i = 0; i < values.Count; i++)
         {
             surplus += Mathf.Abs(values[i] - idealValues[i]);
         }
         surplus -= surplus > 10 ? 10 : 0; 
-        return Mathf.RoundToInt(surplus / (values.Length * 100 / 5));
+        return Mathf.RoundToInt(surplus / (values.Count * 100 / 5));
     }
 }

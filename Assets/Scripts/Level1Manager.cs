@@ -9,6 +9,11 @@ public class Level1Manager : MonoBehaviour
     [SerializeField]
     GameObject Part2;
     int questStatus = 0;
+    [SerializeField]
+    Color Jauge2NewColor;
+    [SerializeField]
+    Color newJaugeColor;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +24,6 @@ public class Level1Manager : MonoBehaviour
     {
         while (true)
         {
-            print(ValueHandler.Instance.values[2]);
             switch (questStatus)
             {
                 case 0:
@@ -28,6 +32,8 @@ public class Level1Manager : MonoBehaviour
                         questStatus++;
                         FindObjectOfType<DialogueReader>().StartDialogue(Part2Dialogue);
                         FindObjectOfType<SwitchCamera>().IncreaseAnchor();
+                        ValueHandler.Instance.ChangeJauge(2, Jauge2NewColor, 50, 20);
+                        ValueHandler.Instance.AddJauge(newJaugeColor, 50, 20);
                         Part2.SetActive(true);
                     }
                     break;

@@ -37,12 +37,12 @@ public class Particulator : MonoBehaviour
             int numParticlesAlive = ps.GetParticles(particles);
             for (int i = 0; i < numParticlesAlive; i++)
             {
-                if (particles[i].remainingLifetime <= 0.15f)
+                if (particles[i].remainingLifetime <= 0.1f)
                 {
                     EmitUIBit(particles[i].position);
                 }
             }
-            yield return new WaitForSeconds(0.1475f);
+            yield return new WaitForSeconds(0.098f);
 
         }
 

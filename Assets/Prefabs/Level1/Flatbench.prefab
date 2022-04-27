@@ -66,13 +66,13 @@ MonoBehaviour:
   itemName: Bench
   description: dumb
   values:
-  - 5
-  - 50
-  - -25
+  - 1
+  - -10
+  - 0
   rambling: []
   deathParticles: {fileID: 5042367466021304291, guid: adb80b6c52c98d941a4d24c2620f89ff, type: 3}
   itemExp: 1
-  sizeModifier: 1
+  sizeModifier: 0.7
 --- !u!65 &-6963446470223882529
 BoxCollider:
   m_ObjectHideFlags: 0

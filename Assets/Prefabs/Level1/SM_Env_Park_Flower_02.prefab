@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4121526659998999118
+--- !u!1 &5352336885304625969
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,49 +8,49 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4124894987672857604}
-  - component: {fileID: 4126689621639130454}
-  - component: {fileID: 4135310783141376898}
-  - component: {fileID: 4121098986471404574}
-  - component: {fileID: 4121098986471404577}
-  - component: {fileID: 4121098986471404576}
+  - component: {fileID: 5352336885304399633}
+  - component: {fileID: 5352336885307823921}
+  - component: {fileID: 5352336885306824177}
+  - component: {fileID: 7824414655454447081}
+  - component: {fileID: 7933159512915140509}
+  - component: {fileID: 8441470212353874574}
   m_Layer: 0
-  m_Name: HexDumbell
+  m_Name: SM_Env_Park_Flower_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4124894987672857604
+--- !u!4 &5352336885304399633
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4121526659998999118}
-  m_LocalRotation: {x: 0.019403711, y: 0.98675597, z: -0.0036169605, w: 0.1610063}
-  m_LocalPosition: {x: -5.8716702, y: 0.44377673, z: 1.5576267}
-  m_LocalScale: {x: 0.08812059, y: 0.088120535, z: 0.08812061}
-  m_ConstrainProportionsScale: 1
+  m_GameObject: {fileID: 5352336885304625969}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 10.66, y: 0, z: -8.3}
+  m_LocalScale: {x: 1.1285383, y: 1.1285378, z: 1.1285383}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0.767, y: 161.48, z: 2.128}
---- !u!33 &4126689621639130454
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!33 &5352336885307823921
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4121526659998999118}
-  m_Mesh: {fileID: 4300000, guid: 97071ac33694b4133b0db9dc2f87c7c7, type: 3}
---- !u!23 &4135310783141376898
+  m_GameObject: {fileID: 5352336885304625969}
+  m_Mesh: {fileID: 4300000, guid: cb63befaab9cdf5449c52681837e0153, type: 3}
+--- !u!23 &5352336885306824177
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4121526659998999118}
+  m_GameObject: {fileID: 5352336885304625969}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -64,9 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 82399c308583a4fbc81afed128515817, type: 2}
-  - {fileID: 2100000, guid: 8d023a259090f4040be72929e940f5cb, type: 2}
-  - {fileID: 2100000, guid: f246c60415db2495b9d54d8fab5c8655, type: 2}
+  - {fileID: 2100000, guid: 823ac0e34852f1946b70b81aa0a7763c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -78,7 +76,7 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
+  m_StitchLightmapSeams: 1
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -88,13 +86,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &4121098986471404574
+--- !u!65 &7824414655454447081
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5352336885304625969}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.53275055, y: 0.31562725, z: 0.40916768}
+  m_Center: {x: 0.017671742, y: 0.21095677, z: -0.057611734}
+--- !u!54 &7933159512915140509
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4121526659998999118}
+  m_GameObject: {fileID: 5352336885304625969}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 1
@@ -104,38 +115,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &4121098986471404577
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4121526659998999118}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 24.308432, y: 8.5823965, z: 9.910097}
-  m_Center: {x: 0.000030517578, y: 0.000015497208, z: -0.00002670288}
---- !u!114 &4121098986471404576
+--- !u!114 &8441470212353874574
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4121526659998999118}
+  m_GameObject: {fileID: 5352336885304625969}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 418daf1dc18f33745842aa941177f5b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Dumbell
-  description: dumb
+  itemName: Fleur
+  description: une fleur
   values:
-  - 5
-  - -10
+  - -2
+  - 0
   - 0
   rambling: []
   deathParticles: {fileID: 5042367466021304291, guid: adb80b6c52c98d941a4d24c2620f89ff, type: 3}
   itemExp: 1
-  sizeModifier: 1
+  sizeModifier: 0.5

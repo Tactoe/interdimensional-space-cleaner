@@ -69,7 +69,7 @@ public class PointGiver : MonoBehaviour
 
     void KillMe()
     {
-        float[] num = new float[ValueHandler.Instance.values.Length];
+        float[] num = new float[ValueHandler.Instance.values.Count];
         for (int i = 0; i < num.Length; i++)
             num[i] = 0;
         num[targetIndex] = isNegative ? -1 : 1;
